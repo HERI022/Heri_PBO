@@ -67,7 +67,27 @@ public class Database {
         }
     }
 
-//    viewnya
+    public void view() {
+        System.out.println("===================================================================================");
+        System.out.printf("| %-8.8S |", "NIM");
+        System.out.printf(" %-20.20S |", "NAMA");
+        System.out.printf(" %-20.20S |", "ALAMAT");
+        System.out.printf(" %8.8S |", "SEMESTER");
+        System.out.printf(" %3.3S |", "SKS");
+        System.out.printf(" %4.4S |%n", "IPK");
+        System.out.println("-----------------------------------------------------------------------------------");
+        for (Mahasiswa mhs : data) {
+            System.out.printf("| %-8.8s |", mhs.getNim());
+            System.out.printf("| %-20.20s |", mhs.getNama());
+            System.out.printf(" %-20.20s |", mhs.getAlamat());
+            System.out.printf(" %8.8s |", mhs.getSemester());
+            System.out.printf(" %3.3s |", mhs.getSks());
+            System.out.printf(" %4.4s |", mhs.getIpk());
+            System.out.println();
+        }
+        System.out.println("-----------------------------------------------------------------------------------");
+    }
+
 
     public boolean insert(String nim, String nama, String alamat, int semester, int sks, double ipk) {
         boolean status = true;
